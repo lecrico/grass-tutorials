@@ -305,7 +305,7 @@ Set `mode` to relative,
 `operation` to cut,
 `function` to exponential,
 `raster` to the raster map of gullies,
-and `rate` $\lambda$ to a value such as 0.1.
+and `exponential` $\lambda$ to a value such as 0.1.
 Save an output `volume` raster
 to visualize volumetric change.
 This may take a minute to run.
@@ -317,7 +317,7 @@ with {{< meta links.g_region >}}.
 ## Command line
 
 ```{bash}
-r.earthworks elevation=fractal earthworks=gullies volume=volume mode=relative operation=cut function=exponential raster=gullies rate=0.1 --overwrite
+r.earthworks elevation=fractal earthworks=gullies volume=volume mode=relative operation=cut function=exponential raster=gullies exponential=0.1 --overwrite
 r.colors map=volume color=inferno
 ```
 
@@ -334,7 +334,7 @@ gs.run_command(
     operation="cut",
     function="exponential",
     raster="gullies",
-    rate=0.1
+    exponential=0.1
     )
 gs.run_command("r.colors", map="volume", color="inferno")
 

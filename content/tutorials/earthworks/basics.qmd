@@ -187,14 +187,15 @@ Use the `z` parameter to set a z-coordinate for the top of the peak.
 Optionally use the `flat` parameter to create a plateau at the top of the peak.
 Using the default linear growth and decay function
 $z = z_0 - r \sqrt{\Delta x^2 + \Delta y^2}$,
-set the `rate` to 0.5 to model a 50 percent slope. 
+set the `linear` slope parameter to 0.5 
+to model a 50 percent slope. 
 
 ::: {.panel-tabset group="language"}
 
 ## Command line
 
 ```{bash}
-r.earthworks elevation=elevation earthworks=peak operation=fill coordinates=400,100 z=25 flat=25 rate=0.5
+r.earthworks elevation=elevation earthworks=peak operation=fill function=linear linear=0.5 coordinates=400,100 z=25 flat=25
 ```
 
 ## Python
@@ -206,10 +207,11 @@ gs.run_command(
     elevation="elevation",
     earthworks="peak",
     operation="fill",
+    function="linear",
+    linear=0.5,
     coordinates=[400, 100],
     z=25,
-    flat=25,
-    rate=0.5
+    flat=25
     )
 
 # Visualize
@@ -239,7 +241,7 @@ then the slopes will climb at a given rate of growth.
 ## Command line
 
 ```{bash}
-r.earthworks elevation=elevation earthworks=pit operation=cut coordinates=400,100 z=-25 flat=25 rate=0.5
+r.earthworks elevation=elevation earthworks=pit operation=cut function=linear linear=0.5 coordinates=400,100 z=-25 flat=25
 ```
 
 ## Python
@@ -251,10 +253,11 @@ gs.run_command(
     elevation="elevation",
     earthworks="pit",
     operation="cut",
+    function="linear",
+    linear=0.5,
     coordinates=[400, 100],
     z=-25,
-    flat=25,
-    rate=0.5
+    flat=25
     )
 
 # Visualize
@@ -281,7 +284,7 @@ and another z-coordinate for the top of the peak.
 ## Command line
 
 ```{bash}
-r.earthworks elevation=elevation earthworks=pit_and_peak operation=cutfill coordinates=350,100,450,100 z=-25,25 flat=25 rate=0.5
+r.earthworks elevation=elevation earthworks=pit_and_peak operation=cutfill function=linear linear=0.5 coordinates=350,100,450,100 z=-25,25 flat=25
 ```
 
 ## Python
@@ -293,10 +296,11 @@ gs.run_command(
     elevation="elevation",
     earthworks="pit_and_peak",
     operation="cutfill",
+    function="linear",
+    linear=0.5,
     coordinates=[350, 100, 450, 100],
     z=[-25, 25],
-    flat=25,
-    rate=0.5
+    flat=25
     )
 
 # Visualize
@@ -335,7 +339,7 @@ Set input raster to the random cells.
 ```{bash}
 r.surf.random out=surface min=0 max=25 seed=2
 r.random input=surface npoints=50 raster=random seed=7
-r.earthworks elevation=elevation earthworks=earthworks operation=fill raster=random rate=0.25 flat=25
+r.earthworks elevation=elevation earthworks=earthworks operation=fill raster=random function=linear linear=0.25 flat=25
 ```
 
 ## Python
@@ -360,7 +364,8 @@ gs.run_command(
     earthworks="earthworks",
     operation="fill",
     raster="random",
-    rate=0.25,
+    function="linear",
+    linear=0.25,
     flat=25
     )
 

@@ -396,7 +396,7 @@ Model a fill operation
 with the extracted textures
 relative to the fractal terrain.
 Try setting an exponential rate of decay
-such as `rate=0.025`.
+such as `exponential=0.025`.
 Add a `volume` output to visualize
 the volumetric change. 
 
@@ -405,7 +405,7 @@ the volumetric change.
 ## Command line
 
 ```{bash}
-r.earthworks elevation=fractal earthworks=synthesis volume=volume mode=relative operation=fill function=exponential raster=ridges rate=0.025
+r.earthworks elevation=fractal earthworks=synthesis volume=volume mode=relative operation=fill function=exponential raster=ridges exponential=0.025
 ```
 
 ## Python
@@ -421,7 +421,7 @@ gs.run_command(
     operation="fill",
     function="exponential",
     raster="ridges",
-    rate=0.025
+    exponential=0.025
     )
 
 # Visualize
