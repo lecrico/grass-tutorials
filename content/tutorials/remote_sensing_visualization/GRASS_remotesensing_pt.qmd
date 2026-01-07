@@ -1,7 +1,7 @@
 ---
 title: "Introdução ao Sensoriamento Remoto com GRASS"
 author: "Michael Barton & Leticia Correa"
-date: 2025-05-21
+date: 2026-01-07
 date-modified: today
 image: img_remotesensing/thumbnail.webp
 lightbox: true
