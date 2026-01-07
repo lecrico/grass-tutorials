@@ -23,7 +23,6 @@ copyright:
   year: 2025
 funding: "A criação deste tutorial foi parcialmente financiada pela bolsa FAIN 2303651 da Fundação Nacional de Ciência dos EUA."
 
-# © Michael Barton 2025
 ---
 
 ::::: grid
