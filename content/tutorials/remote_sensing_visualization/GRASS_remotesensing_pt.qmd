@@ -19,7 +19,7 @@ description: Análise e visualização de imagens de satélite multiespectrais u
 execute: 
   eval: false
 copyright: 
-  holder: Michael Barton
+  holder: Michael Barton and Leticia Correa
   year: 2025
 funding: "A criação deste tutorial foi parcialmente financiada pela bolsa FAIN 2303651 da Fundação Nacional de Ciência dos EUA."
 
